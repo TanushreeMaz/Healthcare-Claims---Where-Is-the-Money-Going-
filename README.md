@@ -62,8 +62,8 @@ Analysis was required to:
 Dashboard Preview:
 Interactive Tableau dashboard created for stakeholders.
 
-⛓️‍💥 Links:
-Linkedln: 
+⛓️‍💥 Links
+Linkedln: https://www.linkedin.com/feed/update/urn:li:share:7419430431445430272/
 Tableau : https://public.tableau.com/app/profile/tanushree.mazumdar/viz/Health_care_17688088315840/Dashboard1?publish=yes
 Analyst Builder: https://www.analystbuilder.com/projects/healthcare-claims-where-is-the-money-going-TVHLQ
 
