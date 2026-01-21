@@ -9,24 +9,35 @@ The dataset contains healthcare insurance claims data including member details, 
 
 Healthcare claims data is large and complex. Analysis helps structure the data, highlight spending patterns, and uncover inefficiencies that are not visible in raw tables, enabling informed financial and operational decisions.
 Analysis was required to:
+
   ✅ Identify where healthcare money is being spent
+  
   ✅ Understand which claim types drive the highest costs
+  
   ✅Compare billed vs. paid amounts to assess insurer efficiency
-	✅ Detect cost drivers at CPT, ICD, and member levels
+  
+  ✅ Detect cost drivers at CPT, ICD, and member levels
+  
   ✅ Enable stakeholders to act on high-cost or inefficient areas
 
 
 ## 🛠 Tools Used
 
+
   ☑️SQL (Data Cleaning & Analysis)
+  
   ☑️ Tableau Public (Dashboard & Visualizations)
 
 ## 📊 Key Business Questions Answered
 
 💠 Which claim types are the most expensive?
+
 💠 Which CPT and ICD codes drive the highest spending?
+
 💠 Which members account for the largest share of total costs?
+
 💠 How do billed amounts compare to paid amounts?
+
 💠 Where does the insurer overpay or underpay?
 
 
@@ -35,9 +46,13 @@ Analysis was required to:
 ### 1. Data Cleaning (SQL) 🛢️
 
   ▶️ Fixed date formats
+  
   ▶️ Removed duplicates
+  
   ▶️ Standardized numeric fields
+  
   ▶️ Validated paid vs billed amounts
+  
 
 ### 2. Cost Analysis 💰
 
