@@ -36,31 +36,7 @@ WHERE Row_num > 1;
 SELECT DISTINCT claim_date
 FROM claims;
 
-# Create staging 2 table
-CREATE TABLE claims_clean AS
-SELECT
-    claim_id,
-    member_id,
-    provider_id,
-    claim_type,
-    cpt_code,
-    icd_code,
-    billed_amount,
-    paid_amount,
-    STR_TO_DATE(claim_date, '%m/%d/%Y') AS claim_date
-FROM claims_staging;
-
-SELECT * FROM claims_clean;
-SELECT * FROM members;
-
-CREATE TABLE members_staging 
-LIKE members;
-
-SELECT * FROM members_staging;
-
-# Insert Data like claims
-INSERT members_staging
-SELECT * FROM members;
+## Created Duplicate Tables to avoid Deletion in future
 
 # Check Duplicates 
 WITH dup_members AS (
@@ -79,25 +55,10 @@ SELECT
 FROM members_staging
 WHERE STR_TO_DATE(enrollment_start_date, '%m/%d/%Y') IS NULL
 	AND enrollment_start_date IS NOT NULL;
-    
-SELECT 
-	enrollment_end_date  
-FROM members_staging
-WHERE STR_TO_DATE(enrollment_end_date, '%m/%d/%Y') IS NULL
-	AND enrollment_end_date IS NOT NULL
-LIMIT 10;
 
-# Create staging 2 table
-CREATE TABLE members_clean AS
-SELECT
-    member_id, 
-    member_age, 
-    member_gender, 
-    plan_type, 
-    STR_TO_DATE(NULLIF(enrollment_start_date, ''), '%m/%d/%Y') AS enrollment_start_date,
-    STR_TO_DATE(NULLIF(enrollment_end_date, ''), '%m/%d/%Y') AS enrollment_end_date
-FROM members_staging;
+## Formatted End Date and cleaned data
 
+## Created Final Analysis Table and Improted to Tableau
 
 SELECT * FROM members_clean;
 SELECT * FROM claims_clean;
@@ -113,8 +74,6 @@ FROM claims_clean
 GROUP BY claim_type
 ORDER BY paid_rank DESC;
 
-
-SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 # Which CPT and ICD codes drive the highest spending?
 SELECT
@@ -201,7 +160,7 @@ ORDER BY Avg_Paid_Ratio;
 
 
 
-
+## Uploaded the Clean Tables to Tableau
 
 
 
