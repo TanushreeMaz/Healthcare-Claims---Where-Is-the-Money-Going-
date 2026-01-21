@@ -1,3 +1,8 @@
+## Notice
+This repository is intended for viewing and evaluation purpose only.
+Unauthorized copying, reuse, or redistribution of the content is not permitted.
+
+	
 use health_care; 
 
 SELECT * FROM claims;
@@ -195,9 +200,7 @@ HAVING SUM(billed_amount) > 0
 ORDER BY Avg_Paid_Ratio; 
 
 
-SELECT * FROM claims_clean;
 
-SELECT * FROM members_clean;
 
 
 
